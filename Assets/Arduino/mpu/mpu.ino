@@ -1,14 +1,17 @@
 #include <Adafruit_MPU6050.h>
 #include <Adafruit_Sensor.h>
 #include <Wire.h>
+#include <BluetoothSerial.h>
 
 Adafruit_MPU6050 mpu;
+BluetoothSerial serialBT;
 float alpha = 0.01;
 uint32_t prevTime = 0;
 float compX = 0;
 
 void setup() {
   Serial.begin(115200);
+  serialBT.begin("ESP-32 (left)");
   Wire.begin();
 
   if (!mpu.begin()) {
@@ -43,6 +46,12 @@ void loop() {
   // Complementery filter application
   compX = alpha * (compX + rateRoll * dt) + (1.0 - alpha) * angleRoll;
 
-  Serial.print("Angle X: ");
-  Serial.println(compX);
+  // Send data to Unity
+  String payload = String(compX) + ",";
+  Serial.println(payload);
+
+  if (!serialBT.available()) {
+    serialBT.println(payload);
+  }
+  delay(300);
 }
