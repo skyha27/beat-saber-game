@@ -11,7 +11,7 @@ float compX = 0;
 
 void setup() {
   Serial.begin(115200);
-  serialBT.begin("ESP-32 (left)");
+  serialBT.begin("ESP-32 (left v2)");
   Wire.begin();
 
   if (!mpu.begin()) {
@@ -50,8 +50,8 @@ void loop() {
   String payload = String(compX) + ",";
   Serial.println(payload);
 
-  if (!serialBT.available()) {
+  // if (serialBT.hasClient()) {
     serialBT.println(payload);
-  }
+  // }
   delay(300);
 }
