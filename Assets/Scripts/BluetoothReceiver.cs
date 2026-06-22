@@ -35,7 +35,6 @@ public class BluetoothReceiver : MonoBehaviour
             }
 
             transform.rotation = Quaternion.Euler(currentX, currentY, 0);
-            // position slight based off x rot
         }
         catch (System.TimeoutException) { }
     }
