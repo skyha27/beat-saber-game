@@ -3,11 +3,19 @@
 #include <Wire.h>
 #include <BluetoothSerial.h>
 
+// Hardware vars
 Adafruit_MPU6050 mpu;
 BluetoothSerial serialBT;
+
+// Software vars
 float alpha = 0.01;
 uint32_t prevTime = 0;
 float compX = 0;
+float compY = 0;
+
+// Timing
+uint32_t lastTime = 0;
+uint32_t interval = 20; // corresponds to 50 hz
 
 void setup() {
   Serial.begin(115200);
@@ -29,11 +37,19 @@ void loop() {
   mpu.getEvent(&accel, &gyro, &temp);
 
   uint32_t timestamp = millis();
+  // only send data to Unity at predefined interval
+  if (timestamp - lastTime < interval) {
+    delay(1);
+    return;
+  }
+  lastTime = timestamp;
+
   float dt = (timestamp - prevTime) / 1000.0; // convert from ms to s
   prevTime = timestamp;
 
   // Raw gyro data converted to degrees
   float rateRoll = (float)gyro.gyro.x * 180.0 / PI;
+  float ratePitch = (float)gyro.gyro.y * 180.0 / PI;
 
   // Raw accel data in m/s^2
   float accX = (float)accel.acceleration.x;
@@ -42,16 +58,15 @@ void loop() {
 
   // Rotation angles from accelerometer
   float angleRoll = atan(accY/sqrt(accX*accX+accZ*accZ))*1/(3.142/180);
+  float anglePitch = atan(accX/sqrt(accY*accY+accZ*accZ))*1/(3.142/180);
 
   // Complementery filter application
   compX = alpha * (compX + rateRoll * dt) + (1.0 - alpha) * angleRoll;
+  compY = alpha * (compY + ratePitch * dt) + (1.0 - alpha) * anglePitch;
 
   // Send data to Unity
-  String payload = String(compX) + ",";
+  String payload = String(compX) + "," + String(compY);
   Serial.println(payload);
 
-  // if (serialBT.hasClient()) {
-    serialBT.println(payload);
-  // }
-  delay(300);
+  serialBT.println(payload);
 }
