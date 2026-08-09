@@ -14,7 +14,7 @@ public class BeatMovement : MonoBehaviour
         // Initial rotation
         if (Quaternion.Angle(transform.rotation, target) > 0.1f)
         {
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, target, 100f * Time.deltaTime);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, target, 200f * Time.deltaTime);
         }
 
         // Forward movement

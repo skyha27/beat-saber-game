@@ -1,0 +1,14 @@
+{
+  "Beats": [
+    {
+      "QuadrantIndex": 0,
+      "Timestamp": 4.0,
+      "Color": true
+    },
+    {
+      "QuadrantIndex": 1,
+      "Timestamp": 5.0,
+      "Color": false
+    }
+  ]
+}

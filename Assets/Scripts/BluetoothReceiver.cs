@@ -4,7 +4,7 @@ using UnityEngine;
 public class BluetoothReceiver : MonoBehaviour
 {
     // Serial information
-    SerialPort serial = new("COM10", 115200);
+    SerialPort serial = new("COM9", 115200);
 
     // Variables for Unity
     float currentX, currentY = 0f;

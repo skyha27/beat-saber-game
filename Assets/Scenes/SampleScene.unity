@@ -556,12 +556,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   beatIndex: 0
-  jsonFile: {fileID: 0}
-  beats:
-  - QuadrantIndex: 0
-    Timestamp: 4
-    Color: 0
-  CubePrefab: {fileID: 1559425485949431099, guid: 566e6cb29bb9703428a72012e4a08b97, type: 3}
+  jsonFile: {fileID: 4900000, guid: 98824ee039b8d4444b295fced269b53d, type: 3}
+  beats: []
+  CubePrefab: {fileID: 930472319740336650, guid: 451ff9af82c772a49aef9ff09fce4274, type: 3}
 --- !u!1 &1131271643
 GameObject:
   m_ObjectHideFlags: 0
