@@ -29,16 +29,24 @@ public class BeatManager : MonoBehaviour
 
             float triggerTime = currentBeat.Timestamp - Constants.BEAT_SPWAN_INVERSE_DELAY;
             if (currentTime >= triggerTime) {
-                SpawnBeat();
+                SpawnBeat(currentBeat.QuadrantIndex);
                 beatIndex++;
             }
         }
     }
 
-    void SpawnBeat()
+    void SpawnBeat(int index)
     {
-        //float startIndex = quadrantIndex % 4;
-        Instantiate(CubePrefab, new Vector3(0f, 0f, 10f), Quaternion.identity);
+        float startIndex = index % 2;
+        switch (startIndex)
+        {
+            case 0:
+                Instantiate(CubePrefab, new Vector3(0f, 0f, 10f), Quaternion.identity);
+                break;
+            case 1:
+                Instantiate(CubePrefab, new Vector3(4f, 0f, 10f), Quaternion.identity);
+                break;
+        }
     }
 }
 
@@ -52,7 +60,7 @@ public class BeatMap
 [System.Serializable]
 public class Beat
 {
-    public float QuadrantIndex;
+    public int QuadrantIndex;
     public float Timestamp;
     public bool Color; // red = true (left quadrant), blue = false (right quadrant); 8 quads total
 }
