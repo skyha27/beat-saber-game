@@ -41,7 +41,7 @@ public class BeatManager : MonoBehaviour
         switch (startIndex)
         {
             case 0:
-                Instantiate(CubePrefab, new Vector3(0f, 0f, 10f), Quaternion.identity);
+                Instantiate(CubePrefab, new Vector3(1f, 0f, 10f), Quaternion.identity);
                 break;
             case 1:
                 Instantiate(CubePrefab, new Vector3(4f, 0f, 10f), Quaternion.identity);
