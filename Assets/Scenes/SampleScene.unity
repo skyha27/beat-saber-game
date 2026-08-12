@@ -410,11 +410,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445573119}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08108b9141c900d40ada50d8bd8b4e36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BluetoothReceiver
+  leftController: 1
 --- !u!1 &752026422
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +698,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1333945664}
-  - component: {fileID: 1333945665}
+  - component: {fileID: 1333945666}
   m_Layer: 0
   m_Name: Pivot Right Saber
   m_TagString: Untagged
@@ -723,7 +724,7 @@ Transform:
   - {fileID: 1962739573}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1333945665
+--- !u!114 &1333945666
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -732,9 +733,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1333945662}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8607ec570dcf21c4e9a8d0ddd81150d2, type: 3}
+  m_Script: {fileID: 11500000, guid: 08108b9141c900d40ada50d8bd8b4e36, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RightReceiver
+  m_EditorClassIdentifier: Assembly-CSharp::BluetoothReceiver
+  leftController: 0
 --- !u!1 &1369545291
 GameObject:
   m_ObjectHideFlags: 0

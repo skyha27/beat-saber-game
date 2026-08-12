@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BluetoothReceiver : MonoBehaviour
 {
+    public bool leftController = true;
     // Serial information
     SerialPort serial = new("COM9", 115200);
 
@@ -20,6 +21,10 @@ public class BluetoothReceiver : MonoBehaviour
 
     void Start()
     {
+        if (!leftController)
+        {
+            serial = new("COM12", 115200);
+        }
         serial.Open();
         thread = new Thread(ReadSerialPort);
         thread.Start();
