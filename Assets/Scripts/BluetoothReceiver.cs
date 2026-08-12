@@ -61,7 +61,7 @@ public class BluetoothReceiver : MonoBehaviour
             currentY = Mathf.SmoothDamp(currentY, targetY, ref velY, 0.08f);
         }
 
-        transform.rotation = Quaternion.Euler(-currentY, -currentX, 0);
+        transform.rotation = Quaternion.Euler(-currentY * Constants.SABER_SPEED_MULTIPLIER, -currentX * Constants.SABER_SPEED_MULTIPLIER, 0);
     }
 
     private void OnDestroy()
