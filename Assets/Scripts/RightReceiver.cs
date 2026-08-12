@@ -3,10 +3,10 @@ using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BluetoothReceiver : MonoBehaviour
+public class RightReceiver : MonoBehaviour
 {
     // Serial information
-    SerialPort serial = new("COM9", 115200);
+    SerialPort serial = new("COM12", 115200);
 
     // To avoid running serial on main thread
     private Thread thread;
