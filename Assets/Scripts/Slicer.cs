@@ -23,6 +23,7 @@ public class Slicer : MonoBehaviour
     public MeshCreator meshCreator;
     public GameObject _tip;
     public GameObject _base;
+    public GameObject sparksGameObject;
     // fields present to create infinite slicing plane
     Vector3 _triggerEnterTipPosition;
     Vector3 _triggerEnterBasePosition;
@@ -149,6 +150,8 @@ public class Slicer : MonoBehaviour
         FillMesh(planeWorldNorm);
         // Destory the original mesh
         Destroy(gameObject);
+        // Spawn sparks particle system
+        Instantiate(sparksGameObject, transform.position, Quaternion.identity);
         // Create two new meshes
         Material material = gameObject.GetComponent<MeshRenderer>().material;
         GameObject? posObject = meshCreator.CreateMesh(positiveMesh, material);

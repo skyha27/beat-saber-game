@@ -11,13 +11,17 @@ public class BeatMovement : MonoBehaviour
 
     void Update()
     {
-        // Initial rotation
-        if (Quaternion.Angle(transform.rotation, target) > 0.1f)
-        {
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, target, 200f * Time.deltaTime);
-        }
-
         // Forward movement
         transform.position += Constants.BEAT_SPEED * Time.deltaTime * _velocity;
+
+        if (transform.position.z <= -5f)
+        {
+            _velocity = new(0f, 1f, 0f);
+        }
+
+        if (transform.position.y < -10f)
+        {
+            Destroy(gameObject);
+        }
     }
 }

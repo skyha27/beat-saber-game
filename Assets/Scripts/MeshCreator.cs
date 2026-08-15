@@ -32,14 +32,14 @@ public class MeshCreator : MonoBehaviour
         //rigidbody.isKinematic = true;
         rigidbody.useGravity = true;
 
-        MeshCollider[] meshColliders = gameObject.GetComponents<MeshCollider>();
-        meshColliders[0].sharedMesh = mesh;
-        meshColliders[0].convex = true;
-        meshColliders[0].isTrigger = true;
+        //MeshCollider[] meshColliders = gameObject.GetComponents<MeshCollider>();
+        //meshColliders[0].sharedMesh = mesh;
+        //meshColliders[0].convex = true;
+        //meshColliders[0].isTrigger = true;
 
-        meshColliders[1].sharedMesh = mesh;
-        meshColliders[1].convex = true;
-        meshColliders[1].isTrigger = false;
+        //meshColliders[1].sharedMesh = mesh;
+        //meshColliders[1].convex = true;
+        //meshColliders[1].isTrigger = false;
 
         return gameObject;
     }

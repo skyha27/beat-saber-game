@@ -1,14 +1,24 @@
 {
   "Beats": [
-    {
-      "QuadrantIndex": 0,
-      "Timestamp": 4.0,
-      "Color": true
-    },
-    {
-      "QuadrantIndex": 1,
-      "Timestamp": 5.0,
-      "Color": false
-    }
+    { "QuadrantIndex": 0, "Timestamp": 3.0, "Color": true },
+    { "QuadrantIndex": 1, "Timestamp": 4.0, "Color": false },
+    { "QuadrantIndex": 1, "Timestamp": 5.0, "Color": true },
+    { "QuadrantIndex": 0, "Timestamp": 6.0, "Color": false },
+    { "QuadrantIndex": 1, "Timestamp": 7.0, "Color": false },
+    { "QuadrantIndex": 0, "Timestamp": 8.0, "Color": true },
+    { "QuadrantIndex": 0, "Timestamp": 9.0, "Color": false },
+    { "QuadrantIndex": 1, "Timestamp": 10.0, "Color": true },
+    { "QuadrantIndex": 0, "Timestamp": 11.0, "Color": true },
+    { "QuadrantIndex": 1, "Timestamp": 12.0, "Color": false },
+    { "QuadrantIndex": 1, "Timestamp": 13.0, "Color": false },
+    { "QuadrantIndex": 0, "Timestamp": 14.0, "Color": true },
+    { "QuadrantIndex": 1, "Timestamp": 15.0, "Color": true },
+    { "QuadrantIndex": 0, "Timestamp": 16.0, "Color": false },
+    { "QuadrantIndex": 0, "Timestamp": 17.0, "Color": true },
+    { "QuadrantIndex": 1, "Timestamp": 18.0, "Color": false },
+    { "QuadrantIndex": 1, "Timestamp": 19.0, "Color": true },
+    { "QuadrantIndex": 0, "Timestamp": 20.0, "Color": true },
+    { "QuadrantIndex": 1, "Timestamp": 21.0, "Color": false },
+    { "QuadrantIndex": 0, "Timestamp": 22.0, "Color": true }
   ]
 }
